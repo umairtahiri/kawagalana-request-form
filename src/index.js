@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import WellcomePage from "./main-form";
+import App from "./App";
 import "./global-styles.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-    <WellcomePage />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

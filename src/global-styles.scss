@@ -3,16 +3,25 @@ body {
   width: 100%;
   overflow: hidden;
   margin: 0px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
 }
+
+.App {
+  width: 100%;
+  height: 100%;
+}
+
 #root {
   width: 100%;
   height: 100%;
 }
+
 .list-btn {
-  width: 150px;
-  height: 40px;
-  background: rgb(82, 80, 80);
-  color: rgb(173, 172, 172);
+  width: 135px;
+  height: 30px;
+  background: #3a3b38;
+  color: #adacac;
   padding: 2px;
   border: none;
   border-radius: 4px;
@@ -20,7 +29,31 @@ body {
   justify-content: center;
   margin: 5px;
   cursor: pointer;
+  border: 1px solid #fff;
+
+  &:hover {
+    background: #53524e;
+  }
 }
+
+.btn-style {
+  width: 110px;
+  height: 40px;
+  background: white;
+  color: #816f4f;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.press-enter-style {
+  color: whitesmoke;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
 .page-number {
   display: flex;
   color: white;

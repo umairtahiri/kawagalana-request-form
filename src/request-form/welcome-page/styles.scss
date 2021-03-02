@@ -1,0 +1,31 @@
+.company-logo-container {
+  display: flex;
+  margin-bottom: 20px;
+
+  .company-name {
+    font-size: 16px;
+    margin-left: 30px;
+    color: #f0f0f0;
+    font-weight: 800;
+  }
+}
+
+.welcome-heading {
+  font-size: 20px;
+  color: #fff;
+}
+
+.wellcome-text {
+  color: #7e7b75;
+  margin-top: 18px;
+  margin-bottom: 30px;
+  width: 560px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.btn-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
