@@ -38,7 +38,7 @@ const Page2 = (props) => {
         />
         {showButton && (
           <div className="btn-container">
-            <button className="btn-style" onClick={() => props.moveNext(25)}>
+            <button className="btn-style" onClick={() => props.moveNext(3)}>
               OK
               <svg height="14" width="14">
                 <path

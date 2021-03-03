@@ -26,10 +26,12 @@ const Page10 = (props) => {
     <Fade bottom>
       <div style={centerAlignStyle}>
         <div className="page-number">
-          <div >
+          <div>
             10 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
-          <div className="page2-objective">Which category best applies to your company?*</div>
+          <div className="page2-objective">
+            Which category best applies to your company?*
+          </div>
         </div>
         <input
           className="input-style"
@@ -38,7 +40,7 @@ const Page10 = (props) => {
         />
         {showButton && (
           <div className="btn-container">
-            <button className="btn-style" onClick={() => props.moveNext()}>
+            <button className="btn-style" onClick={() => props.moveNext(25)}>
               OK
               <svg height="14" width="14">
                 <path
