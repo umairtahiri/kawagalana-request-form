@@ -6,6 +6,7 @@ import "./styles.scss";
 
 const PageRenderer = () => {
   const [page, setPage] = useState(0);
+
   const getPage = () => {
     switch (page) {
       case 1:

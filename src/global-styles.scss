@@ -36,16 +36,65 @@ body {
   }
 }
 
-.btn-style {
-  width: 110px;
-  height: 40px;
-  background: white;
-  color: #816f4f;
+.input-style {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  color: rgb(241, 236, 226);
+  padding: 0px 0px 8px;
   border: none;
-  border-radius: 2px;
+  outline: none;
+  border-radius: 0px;
+  appearance: none;
+  background-image: none;
+  background-position: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  transform: translateZ(0px);
+  font-size: 30px;
+  -webkit-font-smoothing: antialiased;
+  line-height: unset;
+  -webkit-text-fill-color: rgb(241, 236, 226);
+  animation: 1ms ease 0s 1 normal none running native-autofill-in;
+  transition: background-color 1e8s ease 0s, box-shadow 0.1s ease-out 0s;
+  box-shadow: rgba(241, 236, 226, 30%) 0px 1px;
+  background-color: transparent !important;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+text-area:focus,
+input:focus {
+  outline: none;
+}
+
+.btn-style {
+  position: relative;
+  font-family: inherit;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 16px;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  margin: 0px;
+  box-shadow: rgba(0, 0, 0, 10%) 0px 3px 12px 0px;
+  padding: 6px 14px;
+  min-height: 40px;
+  background-color: rgb(241, 236, 226);
+  color: rgb(143, 118, 69);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  > svg {
+    margin-left: 10px;
+  }
 }
 
 .press-enter-style {
@@ -57,4 +106,12 @@ body {
 .page-number {
   display: flex;
   color: white;
+  margin-bottom: 30px;
+}
+
+.btn-container {
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  width: 100%;
 }

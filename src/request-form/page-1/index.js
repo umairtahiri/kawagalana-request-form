@@ -16,7 +16,14 @@ const Page1 = (props) => {
       <div style={centerAlignStyle}>
         <div className="page-number">
           <div>
-            1 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>
+            1
+            <svg height="10" width="11">
+              <path
+                fill="#fff"
+                d="M7.586 5L4.293 1.707 5.707.293 10.414 5 5.707 9.707 4.293 8.293z"
+              ></path>
+              <path fill="#fff" d="M8 4v2H0V4z"></path>
+            </svg>
           </div>
           <div className="page1-intro-text">
             Hi there!There are lots of ups and downs in the life of a company.
