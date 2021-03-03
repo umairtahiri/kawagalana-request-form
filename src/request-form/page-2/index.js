@@ -27,7 +27,7 @@ const Page2 = (props) => {
       <div style={centerAlignStyle}>
         <div className="page-number">
           <div>
-            1 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+            2 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
           <div className="page2-objective">Please enter your company name</div>
         </div>

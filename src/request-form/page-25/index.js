@@ -27,7 +27,7 @@ const Page25 = (props) => {
       <div style={centerAlignStyle}>
         <div className="page-number">
           <div>
-            1 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+            25 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
           <div className="page2-objective">
             If you have not formed the company yet, describe the planned equity
