@@ -1,0 +1,41 @@
+.dob-style {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 4px;
+  .dob-container {
+    width: 100%;
+    color: white;
+
+    .dob-date {
+      display: block;
+      width: 80px;
+      font-family: inherit;
+      color: rgb(241, 236, 226);
+      padding: 0px 0px 8px;
+      border: none;
+      outline: none;
+      border-radius: 0px;
+      appearance: none;
+      background-image: none;
+      background-position: initial;
+      background-size: initial;
+      background-repeat: initial;
+      background-attachment: initial;
+      background-origin: initial;
+      background-clip: initial;
+      transform: translateZ(0px);
+      font-size: 30px;
+      -webkit-font-smoothing: antialiased;
+      line-height: unset;
+      -webkit-text-fill-color: rgb(241, 236, 226);
+      animation: 1ms ease 0s 1 normal none running native-autofill-in;
+      transition: background-color 1e8s ease 0s, box-shadow 0.1s ease-out 0s;
+      box-shadow: rgba(241, 236, 226, 30%) 0px 1px;
+      background-color: transparent !important;
+      margin-bottom: 4px;
+      font-size: 18px;
+      box-sizing: border-box;
+    }
+  }
+}

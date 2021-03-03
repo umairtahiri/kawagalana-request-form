@@ -3,7 +3,7 @@ import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
-const Page2 = (props) => {
+const Page32 = (props) => {
   const [showButton, setShowButton] = useState(false);
   const [companyName, setCompanyName] = useState("");
 
@@ -27,18 +27,23 @@ const Page2 = (props) => {
       <div style={centerAlignStyle}>
         <div className="page-number">
           <div>
-            1 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+            32 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
-          <div className="page2-objective">Please enter your company name</div>
+          <div className="page2-objective">
+            How did you hear about Kwagalana Group ? *
+          </div>
         </div>
         <input
           className="input-style"
-          placeholder="Type Your answer here"
+          placeholder="Type or select an option"
           onChange={(e) => setCompanyName(e.target.value)}
         />
+        <div className="underline-statement">
+          Shift ⇧ + Enter ↵ to make a line break
+        </div>
         {showButton && (
           <div className="btn-container">
-            <button className="btn-style" onClick={() => props.moveNext(25)}>
+            <button className="btn-style" onClick={() => props.moveNext(33)}>
               OK
               <svg height="14" width="14">
                 <path
@@ -56,4 +61,4 @@ const Page2 = (props) => {
     </Fade>
   );
 };
-export default Page2;
+export default Page32;
