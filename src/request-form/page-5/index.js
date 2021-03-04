@@ -29,7 +29,7 @@ const Page5 = (props) => {
           <div >
             5 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
-          <div className="page2-objective">Describe what your company does in 50 characters or less.</div>
+          <div className="page2-objective">Describe what your company does in 50 characters or less.*</div>
         </div>
         <input
           className="input-style"
@@ -42,7 +42,7 @@ const Page5 = (props) => {
               OK
               <svg height="14" width="14">
                 <path
-                  fill="rgb(143, 118, 69)"
+                  fill="#fff"
                   d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
                 ></path>
               </svg>

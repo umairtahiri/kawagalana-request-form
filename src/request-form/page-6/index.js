@@ -42,7 +42,7 @@ const Page6 = (props) => {
               OK
               <svg height="14" width="14">
                 <path
-                  fill="rgb(143, 118, 69)"
+                  fill="#fff"
                   d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
                 ></path>
               </svg>

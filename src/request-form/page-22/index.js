@@ -3,7 +3,7 @@ import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
-const Page8 = (props) => {
+const Page22 = (props) => {
   const [showButton, setShowButton] = useState(false);
   const [companyName, setCompanyName] = useState("");
 
@@ -27,25 +27,23 @@ const Page8 = (props) => {
       <div style={centerAlignStyle}>
         <div className="page-number">
           <div>
-            8 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+            22 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
           <div className="page2-objective">
-            Personal email address of the founder who is filling out this
-            application:
-            <div>
-              An email address that you check often and that you will have
-              access to for a long time.*
-            </div>
+            How will you get users? If your idea is the type that faces a
+            chicken-and-egg problem in the sense that it won't be attractive to
+            users till it has a lot of users (e.g. a marketplace, a dating site,
+            an ad network), how will you overcome that?*
           </div>
         </div>
         <input
           className="input-style"
-          placeholder="name@example.com"
+          placeholder="Type Your answer here"
           onChange={(e) => setCompanyName(e.target.value)}
         />
         {showButton && (
           <div className="btn-container">
-            <button className="btn-style" onClick={() => props.moveNext(9)}>
+            <button className="btn-style" onClick={() => props.moveNext(23)}>
               OK
               <svg height="14" width="14">
                 <path
@@ -63,4 +61,4 @@ const Page8 = (props) => {
     </Fade>
   );
 };
-export default Page8;
+export default Page22;

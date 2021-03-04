@@ -3,7 +3,7 @@ import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
-const Page8 = (props) => {
+const Page18 = (props) => {
   const [showButton, setShowButton] = useState(false);
   const [companyName, setCompanyName] = useState("");
 
@@ -27,25 +27,22 @@ const Page8 = (props) => {
       <div style={centerAlignStyle}>
         <div className="page-number">
           <div>
-            8 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+            18 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
           <div className="page2-objective">
-            Personal email address of the founder who is filling out this
-            application:
-            <div>
-              An email address that you check often and that you will have
-              access to for a long time.*
-            </div>
+            What's new about what you're making? What substitutes do people
+            resort to because it doesn't exist yet (or they don't know about
+            it)?*
           </div>
         </div>
         <input
           className="input-style"
-          placeholder="name@example.com"
+          placeholder="Type Your answer here"
           onChange={(e) => setCompanyName(e.target.value)}
         />
         {showButton && (
           <div className="btn-container">
-            <button className="btn-style" onClick={() => props.moveNext(9)}>
+            <button className="btn-style" onClick={() => props.moveNext(19)}>
               OK
               <svg height="14" width="14">
                 <path
@@ -54,6 +51,7 @@ const Page8 = (props) => {
                 ></path>
               </svg>
             </button>
+
             <div className="press-enter-style">
               press <b>Enter ↵</b>
             </div>
@@ -63,4 +61,4 @@ const Page8 = (props) => {
     </Fade>
   );
 };
-export default Page8;
+export default Page18;
