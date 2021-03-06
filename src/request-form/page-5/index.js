@@ -39,8 +39,7 @@ const Page5 = (props) => {
           <div className="main-text">
             Describe what your company does in 50 characters or less.
           </div>
-          <input
-            className="input-style"
+          <textarea
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
           />

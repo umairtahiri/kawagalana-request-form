@@ -41,10 +41,8 @@ const Page2 = (props) => {
             className="input-style"
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
+            style={{ marginBottom: "10px" }}
           />
-          <div className="input-footer">
-            Shift ⇧ + Enter ↵ to make a line break
-          </div>
           {showButton && (
             <div className="btn-container">
               <button className="btn-style" onClick={() => props.moveNext(3)}>

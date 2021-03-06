@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import "./styles.scss";
-
 import Fade from "react-reveal/Fade";
+
+import { checkIfURLIsValid } from "../../helpers";
+import ErrorMessage from "../../error-message";
+
+import "./styles.scss";
 
 const Page4 = (props) => {
   const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
+  const [URL, setURL] = useState("");
+  const [showError, setShowError] = useState(false);
+
+  const errorMsg =
+    "Hmm… that web address doesn’t look right. Check for any typos or errors.";
 
   const centerAlignStyle = {
     display: "flex",
@@ -19,12 +26,22 @@ const Page4 = (props) => {
   };
 
   useEffect(() => {
-    if (companyName && companyName !== "") {
+    if (URL && URL !== "") {
+      setShowError(false);
       setShowButton(true);
     } else {
       setShowButton(false);
     }
-  }, [companyName]);
+  }, [URL]);
+
+  const onSubmit = () => {
+    const isValid = checkIfURLIsValid(URL);
+    if (isValid) {
+      props.moveNext(5);
+    } else {
+      setShowError(true);
+    }
+  };
 
   return (
     <Fade bottom>
@@ -46,27 +63,31 @@ const Page4 = (props) => {
           </div>
           <input
             className="input-style"
-            placeholder="Https://"
-            onChange={(e) => setCompanyName(e.target.value)}
+            placeholder="https://"
+            onChange={(e) => setURL(e.target.value)}
+            style={{ marginBottom: "10px" }}
           />
-          <div className="input-footer">
-            Shift ⇧ + Enter ↵ to make a line break
-          </div>
-          {showButton && (
-            <div className="btn-container">
-              <button className="btn-style" onClick={() => props.moveNext(5)}>
-                OK
-                <svg height="14" width="14">
-                  <path
-                    fill="white"
-                    d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
-                  ></path>
-                </svg>
-              </button>
-              <div className="press-enter-style">
-                press <b>Enter ↵</b>
-              </div>
-            </div>
+          {showError ? (
+            <ErrorMessage msg={errorMsg} />
+          ) : (
+            <>
+              {showButton && (
+                <div className="btn-container">
+                  <button className="btn-style" onClick={onSubmit}>
+                    OK
+                    <svg height="14" width="14">
+                      <path
+                        fill="white"
+                        d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <div className="press-enter-style">
+                    press <b>Enter ↵</b>
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
