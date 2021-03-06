@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Fade from "react-reveal/Fade";
 
-import { checkIfURLIsValid } from "../../helpers";
-import ErrorMessage from "../../error-message";
-
+import { checkIfURLIsValid } from "../../../helpers";
+import ErrorMessage from "../../common/error-message";
 import "./styles.scss";
 
 const Page3 = (props) => {

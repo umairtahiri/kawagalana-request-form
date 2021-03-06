@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import DropDown from "../../common/dropdown";
+
+import { countries } from "../../constants";
+
 import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
@@ -40,11 +44,7 @@ const Page7 = (props) => {
             Where do you live now, and where would the company be based after
             approval?*
           </div>
-          <input
-            className="input-style"
-            placeholder="Type or select an answer"
-            onChange={(e) => setCompanyName(e.target.value)}
-          />
+          <DropDown list={countries} />
           <div className="input-footer">
             Shift ⇧ + Enter ↵ to make a line break
           </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
-import ListButton from "../custom-button";
+import ListButton from "../../common/custom-button";
 
 import Fade from "react-reveal/Fade";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import RequestForm from "./request-form";
+import RequestForm from "./components/request-form";
 
 const App = () => {
   return (
