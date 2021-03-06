@@ -31,8 +31,8 @@ const Page5 = (props) => {
       <div style={centerAlignStyle}>
         <div className="page-number">
           <div className="page-number-style">
-            <div style={{ marginRight: "5px" }}> 5</div>{" "}
-            <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+            <div style={{ marginRight: "5px" }}> 5</div>
+            <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>
           </div>
         </div>
         <div>
