@@ -6,10 +6,14 @@
   .dob-container {
     width: 100%;
     color: white;
+    margin: 8px;
+    .month-style {
+      margin-bottom: 20px;
+    }
 
     .dob-date {
       display: block;
-      width: 80px;
+      width: 60px;
       font-family: inherit;
       color: rgb(241, 236, 226);
       padding: 0px 0px 8px;
@@ -37,5 +41,10 @@
       font-size: 18px;
       box-sizing: border-box;
     }
+  }
+  .slash-style {
+    font-size: 40px;
+    margin-top: 20px;
+    color: white;
   }
 }

@@ -30,7 +30,8 @@ body {
   margin: 5px;
   cursor: pointer;
   border: 1px solid #fff;
-
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
   &:hover {
     background: #53524e;
   }
@@ -57,14 +58,12 @@ body {
   font-size: 30px;
   -webkit-font-smoothing: antialiased;
   line-height: unset;
-  -webkit-text-fill-color: rgb(241, 236, 226);
   animation: 1ms ease 0s 1 normal none running native-autofill-in;
   transition: background-color 1e8s ease 0s, box-shadow 0.1s ease-out 0s;
   box-shadow: rgba(241, 236, 226, 30%) 0px 1px;
   background-color: transparent !important;
   margin-bottom: 4px;
-  font-size: 18px;
-  box-sizing: border-box;
+  margin-top: 60px;
 }
 
 text-area:focus,
@@ -73,6 +72,7 @@ input:focus {
 }
 
 .btn-style {
+  font-size: large;
   position: relative;
   font-family: inherit;
   font-weight: 700;
@@ -84,14 +84,17 @@ input:focus {
   outline: none;
   border: 1px solid transparent;
   margin: 0px;
-  box-shadow: rgba(0, 0, 0, 10%) 0px 3px 12px 0px;
+
   padding: 6px 14px;
   min-height: 40px;
-  background-color: rgb(241, 236, 226);
-  color: rgb(143, 118, 69);
+  background-color: rgb(172, 1, 1);
+  color: #ffffff;
   border-radius: 4px;
   display: flex;
   align-items: center;
+  &:hover {
+    background-color: rgb(184, 39, 39);
+  }
 
   > svg {
     margin-left: 10px;
@@ -107,8 +110,16 @@ input:focus {
 .page-number {
   display: flex;
   color: white;
-  margin-bottom: 30px;
-  justify-content: flex-start;
+  position: relative;
+  height: 100%;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 10px;
+}
+.page-number-style {
+  display: flex;
+  align-items: baseline;
+  margin-right: 10px;
 }
 
 .btn-container {
@@ -118,24 +129,31 @@ input:focus {
   width: 100%;
 }
 .main-text {
-  color: #f0f0f0;
-  width: 486px;
-  font-size: 18px;
-  margin-bottom: 25px;
-  margin-left: 4px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: rgb(255, 255, 255);
+}
+.main-text-sub {
+  margin-bottom: 20px;
+  max-width: 100%;
   font-weight: 400;
-  line-height: 1.5;
-  word-spacing: 1.5px;
+  font-size: 24px;
+  line-height: 32px;
+  color: rgb(255, 255, 255);
 }
 .sub-text {
-  color: #abb1aa;
   width: 100%;
-  font-size: 16px;
   margin-bottom: 25px;
   margin-left: 4px;
-  font-weight: 360;
-  line-height: 1.5;
+  font-weight: 300;
   word-spacing: 1.5px;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: left;
 }
 .underline-statement {
   color: white;
@@ -153,4 +171,28 @@ input:focus {
   font-size: 16px;
   color: white;
   width: 458px;
+}
+.upload-container {
+  width: 100%;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border: 1px dashed rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+.input-footer {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 5px;
 }

@@ -10,9 +10,13 @@ const Page46 = (props) => {
 
   const centerAlignStyle = {
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: "760px",
+    margin: "0px auto",
+    paddingLeft: "0px",
+    paddingRight: "0px",
   };
 
   useEffect(() => {
@@ -27,27 +31,34 @@ const Page46 = (props) => {
     <Fade bottom>
       <div style={centerAlignStyle}>
         <div className="page-number">
-          <div>
-            46 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
-          </div>
-          <div className="page2-objective">
-            Consents: Please ensure that this application is complete and all
-            founders have filled out their profiles before submitting your
-            application for review. The answer to this question must match the
-            number of profiles filled. Once you submit your application, it will
-            be reviewed, regardless of whether the deadline has passed or not.
+          <div className="page-number-style">
+            <div style={{ marginRight: "5px" }}> 46</div>{" "}
+            <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
         </div>
-        <ListButton
-          label="I Accept"
-          boxName="A"
-          callBack={() => props.moveNext(47)}
-        />
-        <ListButton
-          label="I dont accept"
-          boxName="B"
-          callBack={() => props.moveNext(47)}
-        />
+        <div>
+          <div className="main-text">
+            Consents:
+            <span className="main-text-sub">
+              {" "}
+              Please ensure that this application is complete and all founders
+              have filled out their profiles before submitting your application
+              for review. The answer to this question must match the number of
+              profiles filled. Once you submit your application, it will be
+              reviewed, regardless of whether the deadline has passed or not.
+            </span>
+          </div>
+          <ListButton
+            label="I Accept"
+            boxName="A"
+            callBack={() => props.moveNext(47)}
+          />
+          <ListButton
+            label="I dont accept"
+            boxName="B"
+            callBack={() => props.moveNext(47)}
+          />
+        </div>
       </div>
     </Fade>
   );

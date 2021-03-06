@@ -19,27 +19,37 @@
     color: #f1ece2;
     margin-bottom: 10px;
     border-radius: 4px;
-    width: 150px;
+    width: 180px;
     box-shadow: rgba(0, 0, 0, 10%) 0px 3px 12px 0px;
-    padding: 6px;
+    padding: 7px;
     min-height: 40px;
     transition-duration: 0.1s;
     transition-property: background-color, color, border-color, opacity,
       box-shadow;
     transition-timing-function: ease-out;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
     &:hover {
-      background: #53524e;
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     .box-name {
       display: flex;
-      width: 39px;
-      height: 25px;
-      background: #262626;
+      width: 30px;
+      height: 21px;
+      background: #101010;
       border: 1px solid grey;
       justify-content: center;
       align-items: center;
       margin-right: 5px;
+    }
+    .tick-sign {
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      display: flex;
     }
     .btn-title {
       display: flex;
@@ -47,9 +57,6 @@
       background: none;
       font-size: 13px;
       width: 100%;
-      &:hover {
-        background: #53524e;
-      }
     }
   }
 }

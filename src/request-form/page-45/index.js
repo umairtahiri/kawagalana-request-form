@@ -9,9 +9,13 @@ const Page45 = (props) => {
 
   const centerAlignStyle = {
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: "760px",
+    margin: "0px auto",
+    paddingLeft: "0px",
+    paddingRight: "0px",
   };
 
   useEffect(() => {
@@ -26,36 +30,36 @@ const Page45 = (props) => {
     <Fade bottom>
       <div style={centerAlignStyle}>
         <div className="page-number">
-          <div>
-            45 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+          <div className="page-number-style">
+            <div style={{ marginRight: "5px" }}> 45 </div>{" "}
+            <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
-          <div className="page2-objective">Next of kin*</div>
         </div>
-        <div className="sub-text">Please provide full details.</div>
-        <input
-          className="input-style"
-          placeholder="Type Your answer here"
-          onChange={(e) => setCompanyName(e.target.value)}
-        />
-        <div className="underline-statement">
-          Shift ⇧ + Enter ↵ to make a line break
-        </div>
-        {showButton && (
-          <div className="btn-container">
-            <button className="btn-style" onClick={() => props.moveNext(46)}>
-              OK
-              <svg height="14" width="14">
-                <path
-                  fill="rgb(143, 118, 69)"
-                  d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
-                ></path>
-              </svg>
-            </button>
-            <div className="press-enter-style">
-              press <b>Enter ↵</b>
+        <div>
+          <div className="main-text-sub">Next of kin*</div>
+          <div className="sub-text">Please provide full details.</div>
+          <input
+            className="input-style"
+            placeholder="Type Your answer here"
+            onChange={(e) => setCompanyName(e.target.value)}
+          />
+          {showButton && (
+            <div className="btn-container">
+              <button className="btn-style" onClick={() => props.moveNext(46)}>
+                OK
+                <svg height="14" width="14">
+                  <path
+                    fill="white"
+                    d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
+                  ></path>
+                </svg>
+              </button>
+              <div className="press-enter-style">
+                press <b>Enter ↵</b>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </Fade>
   );

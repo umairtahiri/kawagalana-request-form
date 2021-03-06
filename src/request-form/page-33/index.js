@@ -7,37 +7,41 @@ import Fade from "react-reveal/Fade";
 const Page33 = (props) => {
   const centerAlignStyle = {
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: "760px",
+    margin: "0px auto",
+    paddingLeft: "0px",
+    paddingRight: "0px",
   };
 
   return (
     <Fade bottom>
       <div style={centerAlignStyle}>
         <div className="page-number">
-          <div>
-            33 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+          <div className="page-number-style">
+            <div style={{ marginRight: "5px" }}> 33</div>{" "}
+            <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
-          <div className="page2-objective">Your title*</div>
         </div>
-        <ListButton
-          label="Ms"
-          boxName="A"
-          callBack={() => props.moveNext(34)}
-        />
-        <ListButton
-          label="Mrs"
-          boxName="B"
-          callBack={() => props.moveNext(34)}
-        />
-        <ListButton
-          label="Mr"
-          boxName="C"
-          callBack={() => props.moveNext(34)}
-        />
-        <div className="underline-statement">
-          Shift ⇧ + Enter ↵ to make a line break
+        <div>
+          <div className="main-text">Your title*</div>
+          <ListButton
+            label="Ms"
+            boxName="A"
+            callBack={() => props.moveNext(34)}
+          />
+          <ListButton
+            label="Mrs"
+            boxName="B"
+            callBack={() => props.moveNext(34)}
+          />
+          <ListButton
+            label="Mr"
+            boxName="C"
+            callBack={() => props.moveNext(34)}
+          />
         </div>
       </div>
     </Fade>

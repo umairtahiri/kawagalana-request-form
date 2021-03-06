@@ -1,0 +1,39 @@
+.jxuREi {
+  position: relative;
+}
+.kioWtG {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 10px 10px 0px 0px;
+  left: 32px;
+  top: 2px;
+  bottom: 2px;
+}
+
+.eCIkjX {
+  font-family: inherit;
+  box-sizing: border-box;
+  color: rgb(68, 68, 68);
+  font-size: 16px;
+  line-height: 24px;
+}
+.uploader-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  flex-direction: column;
+  .uploader-text {
+    margin: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    .span-text {
+      font-weight: 200;
+    }
+  }
+  .size-limit-style {
+    font-size: 15px;
+    font-weight: 150;
+  }
+}

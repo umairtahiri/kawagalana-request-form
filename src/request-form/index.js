@@ -37,6 +37,8 @@ import Page48 from "./page-48";
 import Page49 from "./page-49";
 import Page50 from "./page-50";
 import Page51 from "./page-51";
+import Page52 from "./page-52";
+import Page53 from "./page-53";
 
 import "./styles.scss";
 
@@ -119,11 +121,15 @@ const PageRenderer = () => {
         return <Page50 moveNext={(number) => setPage(number)} />;
       case 51:
         return <Page51 moveNext={(number) => setPage(number)} />;
+      case 52:
+        return <Page52 moveNext={(number) => setPage(number)} />;
+      case 53:
+        return <Page53 moveNext={(number) => setPage(number)} />;
       default:
         return <WelcomePage moveNext={(number) => setPage(number)} />;
     }
   };
-  return <div className="main-container">{getPage()}</div>;
+  return <div class="background__Background-esq3f2-0 ikdpbR">{getPage()}</div>;
 };
 
 export default PageRenderer;

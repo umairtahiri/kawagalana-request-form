@@ -9,9 +9,13 @@ const Page36 = (props) => {
 
   const centerAlignStyle = {
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: "760px",
+    margin: "0px auto",
+    paddingLeft: "0px",
+    paddingRight: "0px",
   };
 
   useEffect(() => {
@@ -26,53 +30,58 @@ const Page36 = (props) => {
     <Fade bottom>
       <div style={centerAlignStyle}>
         <div className="page-number">
-          <div>
-            36 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
-          </div>
-          <div className="page2-objective">Date of birth *</div>
-        </div>
-        <div className="dob-style">
-          <div className="dob-container">
-            <div>Date</div>
-            <input
-              className="dob-date"
-              onChange={(e) => setCompanyName(e.target.value)}
-            />
-          </div>
-          <div className="dob-container">
-            <div>Month</div>
-            <input
-              className="dob-date"
-              onChange={(e) => setCompanyName(e.target.value)}
-            />
-          </div>
-          <div className="dob-container">
-            <div>Year</div>
-            <input
-              className="dob-date"
-              onChange={(e) => setCompanyName(e.target.value)}
-            />
+          <div className="page-number-style">
+            <div style={{ marginRight: "5px" }}> 36 </div>
+            <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
         </div>
-        <div className="underline-statement">
-          Shift ⇧ + Enter ↵ to make a line break
-        </div>
-        {showButton && (
-          <div className="btn-container">
-            <button className="btn-style" onClick={() => props.moveNext(37)}>
-              OK
-              <svg height="14" width="14">
-                <path
-                  fill="rgb(143, 118, 69)"
-                  d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
-                ></path>
-              </svg>
-            </button>
-            <div className="press-enter-style">
-              press <b>Enter ↵</b>
+        <div>
+          <div className="main-text-sub">Date of birth *</div>
+          <div className="dob-style">
+            <div className="dob-container">
+              <div className="month-style">Date</div>
+              <input
+                type="number"
+                className="dob-date"
+                onChange={(e) => setCompanyName(e.target.value)}
+              />
+            </div>
+            <div className="slash-style">/</div>
+            <div className="dob-container">
+              <div className="month-style">Month</div>
+              <input
+                type="number"
+                className="dob-date"
+                onChange={(e) => setCompanyName(e.target.value)}
+              />
+            </div>
+            <div className="slash-style">/</div>
+            <div className="dob-container">
+              <div className="month-style">Year</div>
+              <input
+                type="number"
+                className="dob-date"
+                onChange={(e) => setCompanyName(e.target.value)}
+              />
             </div>
           </div>
-        )}
+          {showButton && (
+            <div className="btn-container">
+              <button className="btn-style" onClick={() => props.moveNext(37)}>
+                OK
+                <svg height="14" width="14">
+                  <path
+                    fill="white"
+                    d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
+                  ></path>
+                </svg>
+              </button>
+              <div className="press-enter-style">
+                press <b>Enter ↵</b>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </Fade>
   );
