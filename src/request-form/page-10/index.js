@@ -49,7 +49,7 @@ const Page10 = (props) => {
           </div>
           {showButton && (
             <div className="btn-container">
-              <button className="btn-style" onClick={() => props.moveNext(25)}>
+              <button className="btn-style" onClick={() => props.moveNext(11)}>
                 OK
                 <svg height="14" width="14">
                   <path
