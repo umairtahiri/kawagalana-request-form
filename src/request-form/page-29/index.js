@@ -42,8 +42,7 @@ const Page29 = (props) => {
             fund people it's to do something they list here and not in the main
             application.
           </div>
-          <input
-            className="input-style"
+          <textarea
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
           />

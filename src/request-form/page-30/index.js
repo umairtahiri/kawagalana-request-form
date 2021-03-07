@@ -43,8 +43,7 @@ const Page30 = (props) => {
               (The answer need not be related to your project.)
             </span>
           </div>
-          <input
-            className="input-style"
+          <textarea
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
           />

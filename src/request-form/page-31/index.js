@@ -40,8 +40,7 @@ const Page31 = (props) => {
             What convinced you to apply to Kwagalana Group? Did someone
             encourage you to apply?*
           </div>
-          <input
-            className="input-style"
+          <textarea
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
           />

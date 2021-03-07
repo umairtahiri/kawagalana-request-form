@@ -41,8 +41,7 @@ const Page27 = (props) => {
             property agreements that overlap with your project? If so, please
             explain. *
           </div>
-          <input
-            className="input-style"
+          <textarea
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
           />

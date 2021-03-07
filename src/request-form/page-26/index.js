@@ -40,8 +40,7 @@ const Page26 = (props) => {
             Please provide any other relevant information about the structure or
             formation of the company. *
           </div>
-          <input
-            className="input-style"
+          <textarea
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
           />

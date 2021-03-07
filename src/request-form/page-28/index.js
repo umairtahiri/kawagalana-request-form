@@ -42,8 +42,7 @@ const Page28 = (props) => {
               (Pending lawsuits, cofounders who have left, etc.)
             </div>
           </div>
-          <input
-            className="input-style"
+          <textarea
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
           />
