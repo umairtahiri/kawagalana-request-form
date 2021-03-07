@@ -1,8 +1,8 @@
 import React from "react";
-import "./styles.scss";
-import ListButton from "../custom-button";
+import ListButton from "../../common/custom-button";
 
 import Fade from "react-reveal/Fade";
+import "./styles.scss";
 
 const centerAlignStyle = {
   display: "flex",

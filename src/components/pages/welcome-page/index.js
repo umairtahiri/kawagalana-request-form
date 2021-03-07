@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import logo from "../../images/logo.png";
+import logo from "../../../images/logo.png";
 
 import Fade from "react-reveal/Fade";
 
