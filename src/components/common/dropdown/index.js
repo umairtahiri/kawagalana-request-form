@@ -1,18 +1,34 @@
 import React from "react";
-import "./styles.scss";
+import { Select } from "antd";
 
 const DropDown = (props) => {
-  const { list } = props;
+  const { onSelect, list } = props
+  const { Option } = Select;
+
+  console.log({ list })
+
   return (
-    <div className="dropdown-container">
-      <select className="select-style">
-        {list.map((c) => (
-          <option className="custom-option" value={c.name}>
-            {c.name}
-          </option>
-        ))}
-      </select>
-    </div>
+    <Select
+    className="select-style"
+    allowClear={true}
+    showSearch
+    bordered={false}
+    style={{ width: "100%" }}
+    placeholder="Select a person"
+    optionFilterProp="children"
+    onChange={onSelect}
+    open={true}
+    filterOption={(input, option) =>
+      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+    }s
+  >
+    {(list || []).map((obj, index) => <Option
+    key={index}
+      value={obj.value}
+    >
+      {obj.label}
+    </Option>)}
+  </Select>
   );
 };
 
