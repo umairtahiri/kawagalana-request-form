@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
+// import DropdownList from "../../common/droplist";
+// import { references } from "../../constants";
+import { Select } from "antd";
 
 import Fade from "react-reveal/Fade";
 
@@ -25,6 +28,23 @@ const Page32 = (props) => {
       setShowButton(false);
     }
   }, [companyName]);
+  const { Option } = Select;
+
+  function onChange(value) {
+    console.log(`selected ${value}`);
+  }
+
+  function onBlur() {
+    console.log("blur");
+  }
+
+  function onFocus() {
+    console.log("focus");
+  }
+
+  function onSearch(val) {
+    console.log("search:", val);
+  }
 
   return (
     <Fade bottom>
@@ -39,11 +59,60 @@ const Page32 = (props) => {
           <div className="main-text">
             How did you hear about Kwagalana Group ? *
           </div>
-          <input
+          {/* <DropdownList data={references} /> */}
+          <Select
+            className="select-style"
+            allowClear={true}
+            showSearch
+            bordered={false}
+            style={{ width: "100%" }}
+            placeholder="Select a person"
+            optionFilterProp="children"
+            onChange={onChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onSearch={onSearch}
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            <Option
+              // style={{ color: "blue" }}
+              value="jack"
+              style={{
+                height: "30px",
+                background: "rgba(58, 59, 56, 0.3)",
+                boxSizing: "border-box",
+                // background: "#3a3b38",
+                boxShadow: "rgb(255 255 255 / 60%) 0px 0px 0px 1px",
+                padding: "2px",
+                border: "none",
+                borderRadius: "4px",
+                margin: "5px",
+                cursor: "pointer",
+                // backgroundColor: "rgba(255, 255, 255, 0.3)",
+                color: "brown",
+              }}
+            >
+              Jack
+            </Option>
+            <Option value="lucy">Lucy</Option>
+            <Option value="tom">Tom</Option>
+          </Select>
+          ,
+          {/* <input
+            list="browsers"
             className="input-style"
             placeholder="Type or select an option"
             onChange={(e) => setCompanyName(e.target.value)}
           />
+          <datalist id="browsers">
+            <option value="Internet Explorer" />
+            <option value="Firefox" />
+            <option value="Google Chrome" />
+            <option value="Opera" />
+            <option value="Safari" />
+          </datalist> */}
           {showButton && (
             <div className="btn-container">
               <button className="btn-style" onClick={() => props.moveNext(33)}>

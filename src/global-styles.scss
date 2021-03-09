@@ -218,3 +218,25 @@ textarea {
   transition: box-shadow 0.1s ease-out 0s;
   box-shadow: rgba(255, 255, 255, 30%) 0px 1px;
 }
+.select-style {
+  color: white;
+  transition: background-color 1e8s ease 0s, box-shadow 0.1s ease-out 0s;
+  box-shadow: rgba(241, 236, 226, 30%) 0px 1px;
+  background-color: transparent !important;
+  background-image: none;
+  background-position: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+
+  font-size: 30px;
+  padding: 0px 0px 8px;
+
+  border-radius: 0px;
+}
+.option-style {
+  font-size: 15px;
+  border: 1px solid red;
+}

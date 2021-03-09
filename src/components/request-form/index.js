@@ -57,7 +57,7 @@ import Page53 from "../pages/page-53";
 import "./styles.scss";
 
 const PageRenderer = () => {
-  const [page, setPage] = useState(7);
+  const [page, setPage] = useState(32);
 
   const getPage = () => {
     switch (page) {

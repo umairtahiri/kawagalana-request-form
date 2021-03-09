@@ -4,13 +4,15 @@ import "./styles.scss";
 const DropDown = (props) => {
   const { list } = props;
   return (
-    <select>
-      {list.map((c) => (
-        <option className="custom-option" value={c.name}>
-          {c.name}
-        </option>
-      ))}
-    </select>
+    <div className="dropdown-container">
+      <select className="select-style">
+        {list.map((c) => (
+          <option className="custom-option" value={c.name}>
+            {c.name}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 };
 
