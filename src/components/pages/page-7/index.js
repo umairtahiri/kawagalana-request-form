@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DropDown from "../../common/dropdown";
+import DropdownList from "../../common/dropdown";
 
 import { countries } from "../../constants";
 
@@ -21,7 +21,9 @@ const Page7 = (props) => {
     paddingLeft: "0px",
     paddingRight: "0px",
   };
-
+  const onSelectOption = () => {
+    props.moveNext(8);
+  };
   useEffect(() => {
     if (companyName && companyName !== "") {
       setShowButton(true);
@@ -44,10 +46,11 @@ const Page7 = (props) => {
             Where do you live now, and where would the company be based after
             approval?*
           </div>
-          <DropDown list={countries} />
-          <div className="input-footer">
-            Shift ⇧ + Enter ↵ to make a line break
-          </div>
+          <DropdownList
+            onSelect={onSelectOption}
+            list={countries.map((r) => ({ label: r.name, value: r.name }))}
+          />
+
           {showButton && (
             <div className="btn-container">
               <button className="btn-style" onClick={() => props.moveNext(8)}>

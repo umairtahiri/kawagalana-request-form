@@ -49,9 +49,7 @@ const Page8 = (props) => {
             placeholder="name@example.com"
             onChange={(e) => setCompanyName(e.target.value)}
           />
-          <div className="input-footer">
-            Shift ⇧ + Enter ↵ to make a line break
-          </div>
+
           {showButton && (
             <div className="btn-container">
               <button className="btn-style" onClick={() => props.moveNext(9)}>

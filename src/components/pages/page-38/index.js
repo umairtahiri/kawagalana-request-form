@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
+import DropdownList from "../../common/dropdown";
+
+import { countries } from "../../constants";
 
 import Fade from "react-reveal/Fade";
 
@@ -26,6 +29,11 @@ const Page38 = (props) => {
     }
   }, [companyName]);
 
+  const onSelectOption = (value) => {
+    console.log(`selected ${value}`);
+    props.moveNext(39);
+  };
+
   return (
     <Fade bottom>
       <div style={centerAlignStyle}>
@@ -37,27 +45,10 @@ const Page38 = (props) => {
         </div>
         <div>
           <div className="main-text-sub">Country of birth *</div>
-          <input
-            className="input-style"
-            placeholder="Type or select an option"
-            onChange={(e) => setCompanyName(e.target.value)}
+          <DropdownList
+            onSelect={onSelectOption}
+            list={countries.map((r) => ({ label: r.name, value: r.name }))}
           />
-          {showButton && (
-            <div className="btn-container">
-              <button className="btn-style" onClick={() => props.moveNext(39)}>
-                OK
-                <svg height="14" width="14">
-                  <path
-                    fill="white"
-                    d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
-                  ></path>
-                </svg>
-              </button>
-              <div className="press-enter-style">
-                press <b>Enter ↵</b>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </Fade>

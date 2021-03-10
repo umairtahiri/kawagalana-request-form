@@ -1,13 +1,18 @@
 import React from "react";
 import "./styles.scss";
+import ListButton from "../../common/custom-button";
 
 import Fade from "react-reveal/Fade";
 
 const centerAlignStyle = {
   display: "flex",
-  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
+  width: "100%",
+  maxWidth: "760px",
+  margin: "0px auto",
+  paddingLeft: "0px",
+  paddingRight: "0px",
 };
 
 const Page24 = (props) => {
@@ -15,8 +20,8 @@ const Page24 = (props) => {
     <Fade bottom>
       <div style={centerAlignStyle}>
         <div className="page-number">
-          <div>
-            24
+          <div className="page-number-style">
+            <div style={{ marginRight: "5px" }}> 24</div>
             <svg height="10" width="11">
               <path
                 fill="#fff"
@@ -25,17 +30,21 @@ const Page24 = (props) => {
               <path fill="#fff" d="M8 4v2H0V4z"></path>
             </svg>
           </div>
-          <div className="page1-intro-text">
-          Have you taken any investment yet?*
-          </div>
         </div>
-        <div className="page1-btn-container">
-          <button className="list-btn" onClick={() => props.moveNext(25)}>
-            Yes
-          </button>
-          <button className="list-btn" onClick={() => props.moveNext(0)}>
-            No
-          </button>
+        <div>
+          <div className="main-text">Have you taken any investment yet?*</div>
+          <div className="page1-btn-container">
+            <ListButton
+              label="Yes"
+              boxName="Y"
+              callBack={() => props.moveNext(25)}
+            />
+            <ListButton
+              label="No"
+              boxName="N"
+              callBack={() => props.moveNext(25)}
+            />
+          </div>
         </div>
       </div>
     </Fade>

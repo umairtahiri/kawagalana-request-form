@@ -273,3 +273,11 @@ export const references = [
   { ref: "Other _________________________" },
   { ref: "choice 28" },
 ];
+export const maritaltatus = [
+  { status: "Married" },
+  { status: "Single" },
+  { status: "Separated" },
+  { status: "Divorced" },
+  { status: "Legally Declared Partner" },
+  { status: "Widdowed" },
+];

@@ -53,11 +53,12 @@ import Page50 from "../pages/page-50";
 import Page51 from "../pages/page-51";
 import Page52 from "../pages/page-52";
 import Page53 from "../pages/page-53";
+import Page54 from "../pages/page-54";
 
 import "./styles.scss";
 
 const PageRenderer = () => {
-  const [page, setPage] = useState(32);
+  const [page, setPage] = useState("");
 
   const getPage = () => {
     switch (page) {
@@ -167,6 +168,8 @@ const PageRenderer = () => {
         return <Page52 moveNext={(number) => setPage(number)} />;
       case 53:
         return <Page53 moveNext={(number) => setPage(number)} />;
+      case 54:
+        return <Page54 moveNext={(number) => setPage(number)} />;
       default:
         return <WelcomePage moveNext={(number) => setPage(number)} />;
     }

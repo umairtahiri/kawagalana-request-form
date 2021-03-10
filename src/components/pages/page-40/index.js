@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
-
+import DropdownList from "../../common/dropdown";
+import { maritaltatus } from "../../constants";
 import Fade from "react-reveal/Fade";
 
 const Page40 = (props) => {
@@ -25,6 +26,10 @@ const Page40 = (props) => {
       setShowButton(false);
     }
   }, [companyName]);
+  const onSelectOption = (value) => {
+    console.log(`selected ${value}`);
+    props.moveNext(41);
+  };
 
   return (
     <Fade bottom>
@@ -37,10 +42,12 @@ const Page40 = (props) => {
         </div>
         <div>
           <div className="main-text-sub">Marital status *</div>
-          <input
-            className="input-style"
-            placeholder="Type or select an option"
-            onChange={(e) => setCompanyName(e.target.value)}
+          <DropdownList
+            onSelect={onSelectOption}
+            list={maritaltatus.map((r) => ({
+              label: r.status,
+              value: r.status,
+            }))}
           />
           {showButton && (
             <div className="btn-container">

@@ -40,7 +40,7 @@ const Page25 = (props) => {
             6: A specimen of your signature similar to one on your National ID/
             passport.
           </div>
-          <div className="upload-container" onClick={() => props.moveNext(0)}>
+          <div className="upload-container" onClick={() => props.moveNext(54)}>
             <div>
               <div class="cloud-upload-icon__Root-sc-1kmueyy-0 jxuREi">
                 <svg height="68px" viewBox="0 0 92 68" width="92px">

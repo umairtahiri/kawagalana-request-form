@@ -9,9 +9,13 @@ const Page17 = (props) => {
 
   const centerAlignStyle = {
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: "760px",
+    margin: "0px auto",
+    paddingLeft: "0px",
+    paddingRight: "0px",
   };
 
   useEffect(() => {
@@ -26,36 +30,42 @@ const Page17 = (props) => {
     <Fade bottom>
       <div style={centerAlignStyle}>
         <div className="page-number">
-          <div>
-            17 <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
+          <div className="page-number-style">
+            <div style={{ marginRight: "5px" }}>17</div>{" "}
+            <i class="fa fa-arrow-right" style={{ fontSize: "12px" }}></i>{" "}
           </div>
-          <div className="page2-objective">
+        </div>
+        <div>
+          <div className="main-text">
             Why did you pick this idea to work on? Do you have domain expertise
             in this area? How do you know people need what you're making?*
           </div>
-        </div>
-        <input
-          className="input-style"
-          placeholder="Type Your answer here"
-          onChange={(e) => setCompanyName(e.target.value)}
-        />
-        {showButton && (
-          <div className="btn-container">
-            <button className="btn-style" onClick={() => props.moveNext(18)}>
-              OK
-              <svg height="14" width="14">
-                <path
-                  fill="#fff"
-                  d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
-                ></path>
-              </svg>
-            </button>
-
-            <div className="press-enter-style">
-              press <b>Enter ↵</b>
-            </div>
+          <textarea
+            className="input-style"
+            placeholder="Type Your answer here"
+            onChange={(e) => setCompanyName(e.target.value)}
+          />
+          <div className="input-footer">
+            Shift ⇧ + Enter ↵ to make a line break
           </div>
-        )}
+          {showButton && (
+            <div className="btn-container">
+              <button className="btn-style" onClick={() => props.moveNext(18)}>
+                OK
+                <svg height="14" width="14">
+                  <path
+                    fill="#fff"
+                    d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"
+                  ></path>
+                </svg>
+              </button>
+
+              <div className="press-enter-style">
+                press <b>Enter ↵</b>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </Fade>
   );

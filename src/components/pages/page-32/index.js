@@ -19,7 +19,8 @@ const Page32 = (props) => {
 
   const onSelectOption = (value) => {
     console.log(`selected ${value}`);
-  }
+    props.moveNext(33);
+  };
 
   return (
     <Fade bottom>
@@ -34,7 +35,10 @@ const Page32 = (props) => {
           <div className="main-text">
             How did you hear about Kwagalana Group ? *
           </div>
-          <DropdownList onSelect={onSelectOption} list={references.map(r => ({ label: r.ref, value: r.ref }))} />
+          <DropdownList
+            onSelect={onSelectOption}
+            list={references.map((r) => ({ label: r.ref, value: r.ref }))}
+          />
         </div>
       </div>
     </Fade>

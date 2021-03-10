@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
+import DropdownList from "../../common/dropdown";
+import { countries } from "../../constants";
 
 import Fade from "react-reveal/Fade";
 
@@ -26,6 +28,11 @@ const Page39 = (props) => {
     }
   }, [companyName]);
 
+  const onSelectOption = (value) => {
+    console.log(`selected ${value}`);
+    props.moveNext(40);
+  };
+
   return (
     <Fade bottom>
       <div style={centerAlignStyle}>
@@ -37,10 +44,9 @@ const Page39 = (props) => {
         </div>
         <div>
           <div className="main-text-sub">Nationality *</div>
-          <input
-            className="input-style"
-            placeholder="Type or select an option"
-            onChange={(e) => setCompanyName(e.target.value)}
+          <DropdownList
+            onSelect={onSelectOption}
+            list={countries.map((r) => ({ label: r.name, value: r.name }))}
           />
           {showButton && (
             <div className="btn-container">

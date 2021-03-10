@@ -40,7 +40,7 @@ const Page6 = (props) => {
             What is your company going to make? Please describe your product and
             what it does or will do.*
           </div>
-          <input
+          <textarea
             className="input-style"
             placeholder="Type Your answer here"
             onChange={(e) => setCompanyName(e.target.value)}
