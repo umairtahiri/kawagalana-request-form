@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import * as act from "../../../libs/actions/actions";
+
 import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
 const Page2 = (props) => {
+  const dispatch = useDispatch();
+
+  const companyName = useSelector((state) => {
+    return state?.app?.companyName;
+  });
+
   const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
 
   const centerAlignStyle = {
     display: "flex",
@@ -40,7 +49,7 @@ const Page2 = (props) => {
           <input
             className="input-style"
             placeholder="Type Your answer here"
-            onChange={(e) => setCompanyName(e.target.value)}
+            onChange={(e) => dispatch(act.setCompanyName(e.target.value))}
             style={{ marginBottom: "10px" }}
           />
           {showButton && (

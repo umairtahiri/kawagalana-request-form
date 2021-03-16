@@ -42,6 +42,16 @@ const Page3 = (props) => {
     }
   };
 
+  useEffect(() => {
+    var input = document.getElementById("url-input");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("url-ok-btn").click();
+      }
+    });
+  }, []);
+
   return (
     <Fade bottom>
       <div style={centerAlignStyle}>
@@ -58,6 +68,7 @@ const Page3 = (props) => {
             placeholder="https://"
             onChange={(e) => setURL(e.target.value)}
             style={{ marginBottom: "10px" }}
+            id="url-input"
           />
           {showError ? (
             <ErrorMessage msg={errorMsg} />
@@ -65,7 +76,11 @@ const Page3 = (props) => {
             <>
               {showButton && (
                 <div className="btn-container">
-                  <button className="btn-style" onClick={onSubmit}>
+                  <button
+                    className="btn-style"
+                    onClick={onSubmit}
+                    id="url-ok-btn"
+                  >
                     OK
                     <svg height="14" width="14">
                       <path

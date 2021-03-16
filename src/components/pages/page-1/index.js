@@ -1,4 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+
+import * as act from "../../../libs/actions/actions";
 import ListButton from "../../common/custom-button";
 
 import Fade from "react-reveal/Fade";
@@ -16,6 +19,8 @@ const centerAlignStyle = {
 };
 
 const Page1 = (props) => {
+  const dispatch = useDispatch();
+
   return (
     <Fade bottom>
       <div style={centerAlignStyle}>
@@ -62,12 +67,18 @@ const Page1 = (props) => {
             <ListButton
               label="Accept"
               boxName="A"
-              callBack={() => props.moveNext(2)}
+              callBack={() => {
+                dispatch(act.setApplyForFunding(true));
+                props.moveNext(2);
+              }}
             />
             <ListButton
               label="I dont Accept"
               boxName="B"
-              callBack={() => props.moveNext(0)}
+              callBack={() => {
+                dispatch(act.setApplyForFunding(false));
+                props.moveNext(0);
+              }}
             />
           </div>
         </div>
