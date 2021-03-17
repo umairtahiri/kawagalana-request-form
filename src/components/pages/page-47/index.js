@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import * as act from "../../../libs/actions/actions";
 import "./styles.scss";
 import ListButton from "../../common/custom-button";
 
@@ -15,6 +17,7 @@ const Page47 = (props) => {
     paddingLeft: "0px",
     paddingRight: "0px",
   };
+  const dispatch = useDispatch();
 
   return (
     <Fade bottom>
@@ -36,12 +39,18 @@ const Page47 = (props) => {
           <ListButton
             label="Yes"
             boxName="Y"
-            callBack={() => props.moveNext(48)}
+            callBack={() => {
+              dispatch(act.setCommunication(true));
+              props.moveNext(48);
+            }}
           />
           <ListButton
             label="No"
             boxName="N"
-            callBack={() => props.moveNext(48)}
+            callBack={() => {
+              dispatch(act.setCommunication(true));
+              props.moveNext(48);
+            }}
           />
         </div>
       </div>

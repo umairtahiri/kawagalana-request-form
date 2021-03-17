@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
+import * as act from "../../../libs/actions/actions";
 import "./styles.scss";
 import DropdownList from "../../common/dropdown";
 
@@ -7,9 +9,6 @@ import { countries } from "../../constants";
 import Fade from "react-reveal/Fade";
 
 const Page38 = (props) => {
-  const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
-
   const centerAlignStyle = {
     display: "flex",
     justifyContent: "center",
@@ -20,17 +19,11 @@ const Page38 = (props) => {
     paddingLeft: "0px",
     paddingRight: "0px",
   };
-
-  useEffect(() => {
-    if (companyName && companyName !== "") {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
-  }, [companyName]);
+  const dispatch = useDispatch();
 
   const onSelectOption = (value) => {
     console.log(`selected ${value}`);
+    dispatch(act.setCountryofBirth(true));
     props.moveNext(39);
   };
 

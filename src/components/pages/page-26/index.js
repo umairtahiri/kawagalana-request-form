@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as act from "../../../libs/actions/actions";
+
 import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
 const Page26 = (props) => {
   const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
+  const dispatch = useDispatch();
+
+  const informationAboutTheStructure = useSelector((state) => {
+    return state?.app?.informationAboutTheStructure;
+  });
 
   const centerAlignStyle = {
     display: "flex",
@@ -19,12 +26,21 @@ const Page26 = (props) => {
   };
 
   useEffect(() => {
-    if (companyName && companyName !== "") {
+    if (informationAboutTheStructure && informationAboutTheStructure !== "") {
       setShowButton(true);
     } else {
       setShowButton(false);
     }
-  }, [companyName]);
+  }, [informationAboutTheStructure]);
+  useEffect(() => {
+    var input = document.getElementById("url-input");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("url-ok-btn").click();
+      }
+    });
+  }, []);
 
   return (
     <Fade bottom>
@@ -42,14 +58,21 @@ const Page26 = (props) => {
           </div>
           <textarea
             placeholder="Type Your answer here"
-            onChange={(e) => setCompanyName(e.target.value)}
+            onChange={(e) =>
+              dispatch(act.setInformationAboutTheStructure(e.target.value))
+            }
+            id="url-input"
           />
           <div className="input-footer">
             Shift ⇧ + Enter ↵ to make a line break
           </div>
           {showButton && (
             <div className="btn-container">
-              <button className="btn-style" onClick={() => props.moveNext(27)}>
+              <button
+                className="btn-style"
+                id="url-ok-btn"
+                onClick={() => props.moveNext(27)}
+              >
                 OK
                 <svg height="14" width="14">
                   <path

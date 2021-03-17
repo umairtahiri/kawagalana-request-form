@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as act from "../../../libs/actions/actions";
 import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
 const Page34 = (props) => {
   const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
 
   const centerAlignStyle = {
     display: "flex",
@@ -17,14 +18,28 @@ const Page34 = (props) => {
     paddingLeft: "0px",
     paddingRight: "0px",
   };
+  const dispatch = useDispatch();
+
+  const firstName = useSelector((state) => {
+    return state?.app?.firstName;
+  });
+  useEffect(() => {
+    var input = document.getElementById("first-input");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("first-ok-btn")?.click();
+      }
+    });
+  }, []);
 
   useEffect(() => {
-    if (companyName && companyName !== "") {
+    if (firstName && firstName !== "") {
       setShowButton(true);
     } else {
       setShowButton(false);
     }
-  }, [companyName]);
+  }, [firstName]);
 
   return (
     <Fade bottom>
@@ -40,11 +55,16 @@ const Page34 = (props) => {
           <input
             className="input-style"
             placeholder="Type Your answer here"
-            onChange={(e) => setCompanyName(e.target.value)}
+            onChange={(e) => dispatch(act.setFirstName(e.target.value))}
+            id="first-input"
           />
           {showButton && (
             <div className="btn-container">
-              <button className="btn-style" onClick={() => props.moveNext(35)}>
+              <button
+                className="btn-style"
+                id="first-ok-btn"
+                onClick={() => props.moveNext(35)}
+              >
                 OK
                 <svg height="14" width="14">
                   <path

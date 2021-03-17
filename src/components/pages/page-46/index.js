@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
+import * as act from "../../../libs/actions/actions";
 import "./styles.scss";
 import ListButton from "../../common/custom-button";
 
 import Fade from "react-reveal/Fade";
 
 const Page46 = (props) => {
-  const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
-
   const centerAlignStyle = {
     display: "flex",
     justifyContent: "center",
@@ -19,13 +18,7 @@ const Page46 = (props) => {
     paddingRight: "0px",
   };
 
-  useEffect(() => {
-    if (companyName && companyName !== "") {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
-  }, [companyName]);
+  const dispatch = useDispatch();
 
   return (
     <Fade bottom>
@@ -51,12 +44,18 @@ const Page46 = (props) => {
           <ListButton
             label="I Accept"
             boxName="A"
-            callBack={() => props.moveNext(47)}
+            callBack={() => {
+              dispatch(act.setConsents(true));
+              props.moveNext(47);
+            }}
           />
           <ListButton
             label="I dont accept"
             boxName="B"
-            callBack={() => props.moveNext(47)}
+            callBack={() => {
+              dispatch(act.setConsents(true));
+              props.moveNext(47);
+            }}
           />
         </div>
       </div>

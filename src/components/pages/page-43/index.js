@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as act from "../../../libs/actions/actions";
 import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
 const Page43 = (props) => {
   const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
+  const dispatch = useDispatch();
 
+  const town = useSelector((state) => {
+    return state?.app?.town;
+  });
+  useEffect(() => {
+    var input = document.getElementById("url-input");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("url-ok-btn")?.click();
+      }
+    });
+  }, []);
   const centerAlignStyle = {
     display: "flex",
     justifyContent: "center",
@@ -19,12 +33,12 @@ const Page43 = (props) => {
   };
 
   useEffect(() => {
-    if (companyName && companyName !== "") {
+    if (town && town !== "") {
       setShowButton(true);
     } else {
       setShowButton(false);
     }
-  }, [companyName]);
+  }, [town]);
 
   return (
     <Fade bottom>
@@ -41,11 +55,16 @@ const Page43 = (props) => {
           <input
             className="input-style"
             placeholder="Type Your answer here"
-            onChange={(e) => setCompanyName(e.target.value)}
+            onChange={(e) => dispatch(act.setTown(e.target.value))}
+            id="url-input"
           />
           {showButton && (
             <div className="btn-container">
-              <button className="btn-style" onClick={() => props.moveNext(44)}>
+              <button
+                className="btn-style"
+                id="url-ok-btn"
+                onClick={() => props.moveNext(44)}
+              >
                 OK
                 <svg height="14" width="14">
                   <path

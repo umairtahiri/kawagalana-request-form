@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as act from "../../../libs/actions/actions";
 import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
 const Page31 = (props) => {
   const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
+  const dispatch = useDispatch();
+
+  const convinced = useSelector((state) => {
+    return state?.app?.convinced;
+  });
 
   const centerAlignStyle = {
     display: "flex",
@@ -19,12 +25,21 @@ const Page31 = (props) => {
   };
 
   useEffect(() => {
-    if (companyName && companyName !== "") {
+    if (convinced && convinced !== "") {
       setShowButton(true);
     } else {
       setShowButton(false);
     }
-  }, [companyName]);
+  }, [convinced]);
+  useEffect(() => {
+    var input = document.getElementById("url-input");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("url-ok-btn").click();
+      }
+    });
+  }, []);
 
   return (
     <Fade bottom>
@@ -42,14 +57,19 @@ const Page31 = (props) => {
           </div>
           <textarea
             placeholder="Type Your answer here"
-            onChange={(e) => setCompanyName(e.target.value)}
+            onChange={(e) => dispatch(act.setConvinced(e.target.value))}
+            id="url-input"
           />
           <div className="input-footer">
             Shift ⇧ + Enter ↵ to make a line break
           </div>
           {showButton && (
             <div className="btn-container">
-              <button className="btn-style" onClick={() => props.moveNext(32)}>
+              <button
+                className="btn-style"
+                id="url-ok-btn"
+                onClick={() => props.moveNext(32)}
+              >
                 OK
                 <svg height="14" width="14">
                   <path

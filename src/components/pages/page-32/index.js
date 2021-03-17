@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import * as act from "../../../libs/actions/actions";
 import "./styles.scss";
 import DropdownList from "../../common/dropdown";
 import { references } from "../../constants";
@@ -16,9 +18,11 @@ const Page32 = (props) => {
     paddingLeft: "0px",
     paddingRight: "0px",
   };
+  const dispatch = useDispatch();
 
   const onSelectOption = (value) => {
     console.log(`selected ${value}`);
+    dispatch(act.setHearAbout(true));
     props.moveNext(33);
   };
 

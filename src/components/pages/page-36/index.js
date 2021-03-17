@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as act from "../../../libs/actions/actions";
 import "./styles.scss";
 
 import Fade from "react-reveal/Fade";
 
 const Page36 = (props) => {
   const [showButton, setShowButton] = useState(false);
-  const [companyName, setCompanyName] = useState("");
 
   const centerAlignStyle = {
     display: "flex",
@@ -17,14 +18,48 @@ const Page36 = (props) => {
     paddingLeft: "0px",
     paddingRight: "0px",
   };
+  const dispatch = useDispatch();
 
+  const dayofBirth = useSelector((state) => {
+    return state?.app?.dayofBirth;
+  });
   useEffect(() => {
-    if (companyName && companyName !== "") {
+    if (dayofBirth && dayofBirth !== "") {
       setShowButton(true);
     } else {
       setShowButton(false);
     }
-  }, [companyName]);
+  }, [dayofBirth]);
+  const monthofBirth = useSelector((state) => {
+    return state?.app?.monthofBirth;
+  });
+  useEffect(() => {
+    if (monthofBirth && monthofBirth !== "") {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  }, [monthofBirth]);
+  const yearofBirth = useSelector((state) => {
+    return state?.app?.yearofBirth;
+  });
+  useEffect(() => {
+    if (yearofBirth && yearofBirth !== "") {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  }, [yearofBirth]);
+
+  useEffect(() => {
+    var input = document.getElementById("date-input");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("date-ok-btn")?.click();
+      }
+    });
+  }, []);
 
   return (
     <Fade bottom>
@@ -43,7 +78,8 @@ const Page36 = (props) => {
               <input
                 type="number"
                 className="dob-date"
-                onChange={(e) => setCompanyName(e.target.value)}
+                onChange={(e) => dispatch(act.setDayofBirth(e.target.value))}
+                id="date-input"
               />
             </div>
             <div className="slash-style">/</div>
@@ -52,7 +88,8 @@ const Page36 = (props) => {
               <input
                 type="number"
                 className="dob-date"
-                onChange={(e) => setCompanyName(e.target.value)}
+                onChange={(e) => dispatch(act.setMonthofBirth(e.target.value))}
+                id="date-input"
               />
             </div>
             <div className="slash-style">/</div>
@@ -61,13 +98,18 @@ const Page36 = (props) => {
               <input
                 type="number"
                 className="dob-date"
-                onChange={(e) => setCompanyName(e.target.value)}
+                onChange={(e) => dispatch(act.setYearofBirth(e.target.value))}
+                id="date-input"
               />
             </div>
           </div>
           {showButton && (
             <div className="btn-container">
-              <button className="btn-style" onClick={() => props.moveNext(37)}>
+              <button
+                className="btn-style"
+                id="date-ok-btn"
+                onClick={() => props.moveNext(37)}
+              >
                 OK
                 <svg height="14" width="14">
                   <path
